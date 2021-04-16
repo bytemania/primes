@@ -10,18 +10,18 @@ class PrimeCounterTest {
     @Test
     @DisplayName("Should Calculate the primes for the base case")
     void shouldCalculateThePrimesForTheBaseCase() {
-        assertThat(PrimeCounter.count(1, 1)).isZero();
+        assertThat(PrimeCounter.of().count(1, 1)).isZero();
     }
 
     @Test
     @DisplayName("Should Calculate the primes for a range starting from the base")
     void shouldCalculateThePrimesBetweenTwoNumbersStartingFromTheBase() {
-        assertThat(PrimeCounter.count(1, 10)).isEqualTo(4);
+        assertThat(PrimeCounter.of().count(1, 10)).isEqualTo(4);
     }
 
     @Test
     @DisplayName("Should Calculate the primes for a range")
     void shouldCalculateThePrimesBetweenTwoNumbers() {
-        assertThat(PrimeCounter.count(5, 10)).isEqualTo(2);
+        assertThat(PrimeCounter.of().count(5, 10)).isEqualTo(2);
     }
 }

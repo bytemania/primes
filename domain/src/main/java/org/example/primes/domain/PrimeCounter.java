@@ -1,21 +1,20 @@
 package org.example.primes.domain;
 
-import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.util.stream.LongStream;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(staticName = "of")
 public class PrimeCounter {
 
-    public static long count(long from, long to) {
+    public long count(long from, long to) {
         return LongStream.rangeClosed(from, to)
                 .parallel()
-                .filter(PrimeCounter::isPrime)
+                .filter(this::isPrime)
                 .count();
     }
 
-    private static boolean isPrime(long num) {
+    private boolean isPrime(long num) {
         if (num == 1)  {
             return false;
         }
